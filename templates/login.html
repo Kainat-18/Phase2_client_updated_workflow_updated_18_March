@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Theology Academy Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="login-page">
+  <div class="page-shell login-shell">
+    <section class="panel login-card">
+      <span class="eyebrow">Theology Academy Studio</span>
+      <h1>Welcome back 🔐</h1>
+      <p>Sign in to access storyboard generation, exports, and admin controls.</p>
+      {% if error %}
+        <div class="form-alert error">{{ error }}</div>
+      {% endif %}
+      <form action="/login" method="post" class="login-form">
+        <input type="hidden" name="next" value="{{ next }}">
+        <label>
+          <span>Username</span>
+          <input type="text" name="username" autocomplete="username" required>
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" name="password" autocomplete="current-password" required>
+        </label>
+        <button class="primary-btn" type="submit">Sign in</button>
+      </form>
+    </section>
+  </div>
+</body>
+</html>

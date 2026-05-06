@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ storyboard.title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: Manrope, Arial, sans-serif; background: #eef3fa; color: #18283a; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 22px 14px 44px; }
+    .top-nav { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(8px); background: rgba(238,243,250,.92); border-bottom: 1px solid #d6e2ef; }
+    .top-nav-inner { max-width: 1180px; margin: 0 auto; padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .top-nav strong { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #506884; }
+    .top-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .top-actions a, .top-actions button { border: 1px solid #c9d7e8; border-radius: 999px; padding: 8px 12px; background: white; color: #1d3854; text-decoration: none; font: inherit; font-size: 13px; cursor: pointer; }
+    .hero { background: linear-gradient(145deg, #1b3e63, #245884); color: #f0f6ff; border-radius: 16px; padding: 20px; box-shadow: 0 12px 28px rgba(19, 47, 77, .24); }
+    .hero h1 { margin: 6px 0 10px; font-family: "Playfair Display", Georgia, serif; font-size: 38px; }
+    .hero p { margin: 0; opacity: .9; }
+    .section { margin-top: 16px; background: white; border: 1px solid #d7e4f1; border-radius: 14px; padding: 14px; box-shadow: 0 8px 20px rgba(29, 58, 90, .08); }
+    .section h2 { margin: 0 0 14px; font-family: "Playfair Display", Georgia, serif; font-size: 30px; }
+    .paragraph { border: 1px solid #dce8f5; border-radius: 12px; padding: 12px; margin-bottom: 12px; }
+    .scene { display: grid; grid-template-columns: 70px 1fr; gap: 12px; padding: 12px 0; border-top: 1px dashed #d9e6f3; }
+    .scene:first-child { border-top: 0; padding-top: 0; }
+    .badge { width: 54px; height: 54px; border-radius: 14px; background: linear-gradient(145deg, #1b4a7c, #2566a1); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+    .meta { display: grid; gap: 8px; }
+    .label { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: #5e7490; }
+    .value { font-size: 14px; line-height: 1.52; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+    .card { background: #f7fbff; border: 1px solid #dce8f6; border-radius: 10px; padding: 10px; }
+    @media (max-width: 780px) {
+      .hero h1 { font-size: 30px; }
+      .scene { grid-template-columns: 1fr; }
+      .badge { width: 46px; height: 46px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <div class="top-nav-inner">
+      <strong>Storyboard Preview ✨</strong>
+      <div class="top-actions">
+        <button type="button" onclick="window.history.back()">⬅ Back</button>
+        <a href="/">🏠 Go to upload page</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <section class="hero">
+      <div>{{ storyboard.provider.replace('_', ' ').title() }}</div>
+      <h1>{{ storyboard.title }}</h1>
+      <p>{{ storyboard.source_file }}</p>
+    </section>
+    {% for section in storyboard.sections %}
+    <section class="section">
+      <h2>{{ section.title }}</h2>
+      {% for paragraph in section.paragraphs %}
+      <div class="paragraph">
+        {% for scene in paragraph.scenes %}
+        <div class="scene">
+          <div class="badge">{{ scene.sentence_index }}</div>
+          <div class="meta">
+            <div>
+              <div class="label">Sentence</div>
+              <div class="value">{{ scene.sentence }}</div>
+            </div>
+            <div>
+              <div class="label">Alignment</div>
+              <div class="value">{{ scene.alignment_id }} | Page {{ scene.page_id }} #{{ scene.page_position }} | Confidence {{ scene.alignment_confidence }}</div>
+            </div>
+            <div>
+              <div class="label">Academic sentence</div>
+              <div class="value">{{ scene.academic_sentence }}</div>
+            </div>
+            <div class="grid">
+              <div class="card"><div class="label">Visual concept</div><div class="value">{{ scene.visual_concept }}</div></div>
+              <div class="card"><div class="label">On-screen text</div><div class="value">{{ scene.on_screen_text }}</div></div>
+              <div class="card"><div class="label">Placement</div><div class="value">{{ scene.placement }}</div></div>
+              <div class="card"><div class="label">Text box style</div><div class="value">{{ scene.text_box_style }}</div></div>
+              <div class="card"><div class="label">Animation</div><div class="value">{{ scene.background_animation }}</div></div>
+              <div class="card"><div class="label">Arrows / connections</div><div class="value">{{ scene.arrows_connections }}</div></div>
+              <div class="card"><div class="label">Visual elements</div><div class="value">{{ scene.visual_elements | join(', ') }}</div></div>
+              <div class="card"><div class="label">Key tokens</div><div class="value">{{ scene.key_visual_tokens | join(', ') }}</div></div>
+              <div class="card"><div class="label">Layers</div><div class="value">{{ scene.compositional_layers | join(' | ') }}</div></div>
+              <div class="card"><div class="label">Motion guidance</div><div class="value">{{ scene.motion_guidance }}</div></div>
+              <div class="card"><div class="label">Scene checklist</div><div class="value">{{ scene.scene_checklist | join(' | ') }}</div></div>
+              <div class="card"><div class="label">Notes</div><div class="value">{{ scene.additional_notes }}</div></div>
+            </div>
+            <div>
+              <div class="label">References / footnotes</div>
+              <div class="value">{{ scene.references | join(' | ') }}</div>
+            </div>
+            <div>
+              <div class="label">Image prompt</div>
+              <div class="value">{{ scene.image_prompt }}</div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </section>
+    {% endfor %}
+  </div>
+</body>
+</html>

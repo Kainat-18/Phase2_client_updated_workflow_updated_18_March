@@ -1,0 +1,164 @@
+{
+  "episode_title": "Historical Genealogy Youtube",
+  "brand": "TheoEngage Inc.",
+  "workflow_mode": "Canva prompts only",
+  "opening_sequence": [
+    {
+      "event": "closed_book_cover",
+      "notes": "Closed book with episode title and TheoEngage logo on cover."
+    },
+    {
+      "event": "book_open_title_page",
+      "notes": "Book opens to title page with heading and introduction."
+    }
+  ],
+  "sections": [
+    {
+      "title": "Introduction",
+      "events": [
+        {
+          "event": "canva_image_scene",
+          "alignment_id": "ALN-0001",
+          "paragraph_index": 1,
+          "duration_sec": 2.8,
+          "camera": "zoom in then zoom out",
+          "on_screen_text": "Daytime Temple Court Prayers",
+          "placement": "side explainer box"
+        },
+        {
+          "event": "canva_image_scene",
+          "alignment_id": "ALN-0002",
+          "paragraph_index": 2,
+          "duration_sec": 2.8,
+          "camera": "zoom in then zoom out",
+          "on_screen_text": "Early Jerusalem House Fellowship",
+          "placement": "side explainer box"
+        },
+        {
+          "event": "canva_image_scene",
+          "alignment_id": "ALN-0003",
+          "paragraph_index": 2,
+          "duration_sec": 2.8,
+          "camera": "zoom in then zoom out",
+          "on_screen_text": "Liturgical Meal Evolution",
+          "placement": "side explainer box"
+        },
+        {
+          "event": "canva_image_scene",
+          "alignment_id": "ALN-0004",
+          "paragraph_index": 3,
+          "duration_sec": 2.8,
+          "camera": "zoom in then zoom out",
+          "on_screen_text": "Hybrid Worship Jerusalem",
+          "placement": "side explainer box"
+        },
+        {
+          "event": "canva_image_scene",
+          "alignment_id": "ALN-0005",
+          "paragraph_index": 4,
+          "duration_sec": 2.8,
+          "camera": "zoom in then zoom out",
+          "on_screen_text": "Early Christian Eucharistic Prayer Gathering",
+          "placement": "side explainer box"
+        },
+        {
+          "event": "canva_image_scene",
+          "alignment_id": "ALN-0006",
+          "paragraph_index": 4,
+          "duration_sec": 2.8,
+          "camera": "zoom in then zoom out",
+          "on_screen_text": "Bishop Leading Unified Eucharist",
+          "placement": "side explainer box"
+        },
+        {
+          "event": "canva_image_scene",
+          "alignment_id": "ALN-0007",
+          "paragraph_index": 5,
+          "duration_sec": 2.8,
+          "camera": "zoom in then zoom out",
+          "on_screen_text": "Early Christian House Church Gathering",
+          "placement": "side explainer box"
+        },
+        {
+          "event": "canva_image_scene",
+          "alignment_id": "ALN-0008",
+          "paragraph_index": 6,
+          "duration_sec": 2.8,
+          "camera": "zoom in then zoom out",
+          "on_screen_text": "House-church Eucharist Ritual",
+          "placement": "side explainer box"
+        },
+        {
+          "event": "canva_image_scene",
+          "alignment_id": "ALN-0009",
+          "paragraph_index": 6,
+          "duration_sec": 2.8,
+          "camera": "zoom in then zoom out",
+          "on_screen_text": "Early Church Organizational Roles",
+          "placement": "side explainer box"
+        },
+        {
+          "event": "canva_image_scene",
+          "alignment_id": "ALN-0010",
+          "paragraph_index": 7,
+          "duration_sec": 2.8,
+          "camera": "zoom in then zoom out",
+          "on_screen_text": "Fourth-century Scholar Writing Ecclesiastical History",
+          "placement": "side explainer box"
+        },
+        {
+          "event": "canva_image_scene",
+          "alignment_id": "ALN-0011",
+          "paragraph_index": 7,
+          "duration_sec": 2.8,
+          "camera": "zoom in then zoom out",
+          "on_screen_text": "Twelfth-century Jerusalem Liturgical Manuscripts",
+          "placement": "side explainer box"
+        },
+        {
+          "event": "canva_image_scene",
+          "alignment_id": "ALN-0012",
+          "paragraph_index": 8,
+          "duration_sec": 2.8,
+          "camera": "zoom in then zoom out",
+          "on_screen_text": "Early Christian Communal Meal",
+          "placement": "side explainer box"
+        },
+        {
+          "event": "canva_image_scene",
+          "alignment_id": "ALN-0013",
+          "paragraph_index": 8,
+          "duration_sec": 2.8,
+          "camera": "zoom in then zoom out",
+          "on_screen_text": "Scholars Examining Ancient Manuscript",
+          "placement": "side explainer box"
+        },
+        {
+          "event": "canva_image_scene",
+          "alignment_id": "ALN-0014",
+          "paragraph_index": 9,
+          "duration_sec": 2.8,
+          "camera": "zoom in then zoom out",
+          "on_screen_text": "Unrolling Chronological Scroll Eucharistic Development",
+          "placement": "side explainer box"
+        }
+      ],
+      "section_close": {
+        "event": "full_page_reveal",
+        "camera": "zoom out"
+      },
+      "next_transition": "page_flip"
+    }
+  ],
+  "closing_sequence": [
+    {
+      "event": "credits"
+    },
+    {
+      "event": "logo_end_card"
+    },
+    {
+      "event": "animated_cta"
+    }
+  ]
+}

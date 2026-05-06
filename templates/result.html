@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storyboard Result</title>
+  <link rel="stylesheet" href="{{ request.url_for('static', path='styles.css') }}?v=20260312c">
+  <style>
+    /* Fallback if external stylesheet fails to load or is stale-cached */
+    .manifest-panel { margin-top: 14px; }
+    .manifest-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .manifest-card { border: 1px solid #c8d9ec; border-radius: 14px; padding: 14px; background: linear-gradient(180deg, #fff, #f3f8ff); }
+    .manifest-card-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .manifest-card-section, .manifest-card-meta span { border: 1px solid #d8e6f5; border-radius: 999px; padding: 3px 8px; background: #f7fbff; font-size: 12px; }
+    .manifest-card-meta { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0 10px; }
+    .manifest-card-body { display: grid; gap: 10px; }
+    .manifest-block { border: 1px solid #dceaf8; border-radius: 12px; background: #fff; padding: 9px 10px; }
+    .manifest-block-label { display: block; margin-bottom: 4px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #4f6781; }
+    .manifest-block-topic { background: #f1f7ff; }
+    .manifest-block-translation { background: #eef9f3; border-color: #d5f0e3; }
+    .manifest-block-prompt { background: #fff3e6; border-color: #ffdcbd; }
+    .manifest-inline-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    @media (max-width: 700px) {
+      .manifest-inline-grid { grid-template-columns: 1fr; }
+      .manifest-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="result-page" data-job-id="{{ job_id }}">
+  <div class="page-shell compact-shell">
+    <div class="app-toolbar">
+      <div class="app-user">Signed in as <strong>{{ current_user.username }}</strong></div>
+      <div class="app-toolbar-actions">
+        {% if current_user.is_admin %}<a class="secondary-btn" href="/admin">Admin dashboard</a>{% endif %}
+        <a class="secondary-btn" href="/">Home</a>
+        <a class="secondary-btn" href="/logout">Logout</a>
+      </div>
+    </div>
+    <header class="result-topbar">
+      <div>
+        <span class="eyebrow">Phase 2 Prompt Pack Ready</span>
+        <h1>{{ job_id.replace('_', ' ').title() }}</h1>
+        <p class="result-subtitle">This version is optimized for paragraph analysis → Canva prompt creation → Canva image export → attach images → video.</p>
+      </div>
+      <div class="topbar-actions">
+        <a class="secondary-btn" href="{{ preview_path }}" target="_blank">Open preview</a>
+        <a class="primary-btn" href="{{ download_path }}">Download zip</a>
+      </div>
+    </header>
+
+    <section class="result-metrics">
+      <div class="metric-card"><span>Main file</span><strong>final_scene_manifest.csv</strong></div>
+      <div class="metric-card"><span>Workflow</span><strong>Paragraph → 1–2 Canva prompts</strong></div>
+      <div class="metric-card"><span>Next step</span><strong>Generate images in Canva</strong></div>
+    </section>
+
+    <section class="result-grid">
+      <div class="panel file-links">
+        <h2>Use these files</h2>
+        {% for file in generated_files %}
+          <a href="{{ file.path }}" target="_blank">{{ file.name }}</a>
+        {% endfor %}
+      </div>
+      <div class="panel file-links">
+        <h2>Workflow</h2>
+        <p>1. Generate paragraph prompts (this package is ready).</p>
+        <p>2. Open <strong>final_scene_manifest.csv</strong>.</p>
+        <p>3. Copy each row's <strong>ColumnF_CanvaImagePrompts</strong> into Canva AI Image Generator.</p>
+        <p>4. Export Canva images using exact names like <strong>ALN-0001.png</strong>.</p>
+        <p>5. Run <code>attach-canva-images</code>.</p>
+        <p>6. Run <code>make-video</code>.</p>
+      </div>
+    </section>
+
+    {% if manifest_scenes %}
+    <section class="panel manifest-panel">
+      <div class="manifest-head">
+        <h2>Final Scene Manifest</h2>
+        <span>{{ manifest_total }} scenes</span>
+      </div>
+      <div class="manifest-cards">
+        {% for scene in manifest_scenes %}
+        <article class="manifest-card">
+          <div class="manifest-card-top">
+            <div class="manifest-card-id">
+              <span class="manifest-card-index">Scene {{ loop.index }}</span>
+              <strong>{{ scene.scene_id }}</strong>
+            </div>
+            <span class="manifest-card-section">{{ scene.section }}</span>
+          </div>
+          <div class="manifest-card-meta">
+            <span>P{{ scene.paragraph_index }}</span>
+            <span>{{ scene.resolution }}</span>
+            <span>{{ scene.animation.scene_duration if scene.animation else "2.8 seconds" }}</span>
+          </div>
+          <div class="manifest-card-body">
+            <div class="manifest-block manifest-block-topic">
+              <span class="manifest-block-label">Topic</span>
+              <p>{{ scene.scene_focus }}</p>
+            </div>
+            <div class="manifest-block manifest-block-paragraph">
+              <span class="manifest-block-label">Paragraph</span>
+              <p>{{ scene.paragraph_text }}</p>
+            </div>
+            <div class="manifest-block manifest-block-translation">
+              <span class="manifest-block-label">Translation / Overlay Text</span>
+              <textarea
+                class="overlay-textarea"
+                data-role="overlay-text"
+                data-scene-id="{{ scene.scene_id }}"
+                rows="3"
+              >{{ scene.overlay_content }}</textarea>
+            </div>
+            <div class="manifest-block manifest-block-prompt">
+              <span class="manifest-block-label">Image Prompt</span>
+              <textarea
+                class="prompt-textarea"
+                data-role="prompt-text"
+                data-scene-id="{{ scene.scene_id }}"
+                rows="4"
+              >{{ scene.image_prompt }}</textarea>
+              <label class="manifest-block-label" style="margin-top:6px;">Ask LLM to modify this prompt</label>
+              <input
+                type="text"
+                class="prompt-instructions-input"
+                data-role="prompt-instructions"
+                data-scene-id="{{ scene.scene_id }}"
+                placeholder="Describe the change you want (e.g., 'remove figures and make it more symbolic')"
+              />
+              <button
+                type="button"
+                class="primary-btn"
+                data-role="refine-btn"
+                data-scene-id="{{ scene.scene_id }}"
+              >
+                Refine prompt with LLM
+              </button>
+              <div
+                class="prompt-refine-status"
+                data-role="refine-status"
+                data-scene-id="{{ scene.scene_id }}"
+              ></div>
+            </div>
+            <div class="manifest-inline-grid">
+              <div class="manifest-block">
+                <span class="manifest-block-label">Placement</span>
+                <p>{{ scene.placement }}</p>
+              </div>
+              <div class="manifest-block">
+                <span class="manifest-block-label">Text Style</span>
+                <p>{{ scene.text_box_style }}</p>
+              </div>
+            </div>
+            <div class="manifest-inline-grid">
+              <div class="manifest-block">
+                <span class="manifest-block-label">Visual Elements</span>
+                <p>{{ scene.visual_elements|join(", ") if scene.visual_elements else "N/A" }}</p>
+              </div>
+              <div class="manifest-block">
+                <span class="manifest-block-label">On-Screen Citation (Chicago Style)</span>
+                <textarea
+                  class="citation-textarea"
+                  data-role="citation-text"
+                  data-scene-id="{{ scene.scene_id }}"
+                  rows="2"
+                  placeholder="e.g., Gregory the Great, Ep. 25 to John, Bishop of Constantinople, NPNF 2/12:681."
+                >{{ scene.references|join("; ") if scene.references else "" }}</textarea>
+                <button
+                  type="button"
+                  class="secondary-btn"
+                  data-role="save-overlay-btn"
+                  data-scene-id="{{ scene.scene_id }}"
+                >
+                  Save text & citation
+                </button>
+                <div
+                  class="prompt-refine-status"
+                  data-role="overlay-status"
+                  data-scene-id="{{ scene.scene_id }}"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+  </div>
+  <script>
+    (function () {
+      const buttons = document.querySelectorAll('[data-role="refine-btn"]');
+      const saveOverlayButtons = document.querySelectorAll('[data-role="save-overlay-btn"]');
+      const jobId = document.body.getAttribute('data-job-id') || '';
+      if (!buttons.length) return;
+
+      function findBySceneId(role, sceneId) {
+        return document.querySelector(`[data-role="${role}"][data-scene-id="${sceneId}"]`);
+      }
+
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', async () => {
+          const sceneId = btn.getAttribute('data-scene-id') || '';
+          const promptEl = findBySceneId('prompt-text', sceneId);
+          const instructionsEl = findBySceneId('prompt-instructions', sceneId);
+          const statusEl = findBySceneId('refine-status', sceneId);
+          if (!promptEl || !instructionsEl || !statusEl) return;
+
+          const originalPrompt = promptEl.value.trim();
+          const changeInstructions = instructionsEl.value.trim();
+          if (!originalPrompt || !changeInstructions) {
+            statusEl.textContent = 'Please provide both the current prompt and the change instructions.';
+            statusEl.classList.add('status-error');
+            return;
+          }
+
+          btn.disabled = true;
+          const originalLabel = btn.textContent;
+          btn.textContent = 'Refining...';
+          statusEl.textContent = '';
+          statusEl.classList.remove('status-error');
+
+          try {
+            const resp = await fetch('/api/refine_prompt', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                original_prompt: originalPrompt,
+                change_instructions: changeInstructions,
+                job_id: jobId,
+                scene_id: sceneId,
+              }),
+            });
+            if (!resp.ok) {
+              const data = await resp.json().catch(() => ({}));
+              const detail = data.detail || 'Failed to refine prompt.';
+              statusEl.textContent = detail;
+              statusEl.classList.add('status-error');
+            } else {
+              const data = await resp.json();
+              if (data && data.refined_prompt) {
+                promptEl.value = data.refined_prompt;
+                statusEl.textContent = 'Prompt refined. You can copy the updated prompt into Canva.';
+                statusEl.classList.remove('status-error');
+              } else {
+                statusEl.textContent = 'Refinement completed but no prompt was returned.';
+                statusEl.classList.add('status-error');
+              }
+            }
+          } catch (err) {
+            statusEl.textContent = 'Network error while refining prompt.';
+            statusEl.classList.add('status-error');
+          } finally {
+            btn.disabled = false;
+            btn.textContent = originalLabel;
+          }
+        });
+      });
+
+      // Save overlay text and on-screen citation (Andrew approval step)
+      function findOverlayBySceneId(role, sceneId) {
+        return document.querySelector(`[data-role="${role}"][data-scene-id="${sceneId}"]`);
+      }
+
+      saveOverlayButtons.forEach((btn) => {
+        btn.addEventListener('click', async () => {
+          const sceneId = btn.getAttribute('data-scene-id') || '';
+          const overlayEl = findOverlayBySceneId('overlay-text', sceneId);
+          const citationEl = findOverlayBySceneId('citation-text', sceneId);
+          const statusEl = findOverlayBySceneId('overlay-status', sceneId);
+          if (!overlayEl || !citationEl || !statusEl) return;
+
+          const overlayContent = overlayEl.value.trim();
+          const referencesDisplay = citationEl.value.trim();
+
+          btn.disabled = true;
+          const originalLabel = btn.textContent;
+          btn.textContent = 'Saving...';
+          statusEl.textContent = '';
+          statusEl.classList.remove('status-error');
+
+          try {
+            const resp = await fetch('/api/update_scene_text', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                job_id: jobId,
+                scene_id: sceneId,
+                overlay_content: overlayContent,
+                references_display: referencesDisplay,
+              }),
+            });
+            if (!resp.ok) {
+              const data = await resp.json().catch(() => ({}));
+              const detail = data.detail || 'Failed to save text and citation.';
+              statusEl.textContent = detail;
+              statusEl.classList.add('status-error');
+            } else {
+              statusEl.textContent = 'Saved. Use this text and citation on screen.';
+              statusEl.classList.remove('status-error');
+            }
+          } catch (err) {
+            statusEl.textContent = 'Network error while saving.';
+            statusEl.classList.add('status-error');
+          } finally {
+            btn.disabled = false;
+            btn.textContent = originalLabel;
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

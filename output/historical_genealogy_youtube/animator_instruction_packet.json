@@ -1,0 +1,248 @@
+{
+  "title": "Historical Genealogy Youtube",
+  "brand": "TheoEngage Inc.",
+  "workflow": "paragraph prompt generation for Canva",
+  "paragraph_templates": [
+    {
+      "section": "Introduction",
+      "paragraph_index": 1,
+      "prompt_count": 1,
+      "scenes": [
+        {
+          "alignment_id": "ALN-0001",
+          "paragraph_text": "Imagine three thousand new believers in Jerusalem, crowding into the temple courts by day for public prayers, then slipping into homes at night to break bread with glad hearts\u2014could that raw, joyful rhythm really launch two thousand years of Christian worship?",
+          "scene_focus": "Daytime temple court prayers",
+          "prompt": "A crowded scene in the sunlit courts of the ancient Jerusalem Temple, where three thousand diverse figures in simple 1st-century tunics and robes gather in fervent public prayer, hands raised toward the shadowed porticoes and stone pillars, faces illuminated by soft daylight filtering through arches, conveying a sense of raw communal energy amid the weathered limestone architecture and distant city skyline Rendered as a heavy, hand-worked charcoal drawing on rough-textured aged parchment, with thick graphite strokes, deep smudged carbon blacks, and fine cross-hatching. The style mirrors 19th-century tonalism: soft-focus atmospheric edges and a strong sense of physical depth. The image is predominantly monochrome-rich charcoal blacks, charcoal-dust greys, and warm ivory-parchment midtones-with a restrained, ghostly tint of color drawn ONLY from the TheoEngage signature palette: oxidized gold ochre for candlelight and focal warmth; aged lapis indigo for deep, misty shadows; and a muted Byzantine crimson for subtle gravity. Colors appear as thin, dried pigment washes over the charcoal. Lighting is dramatic chiaroscuro, featuring high tonal contrast, deep velvety shadows, and softly glowing highlights. Visible paper fiber, toothy grain, and organic imperfections throughout. The final image must NOT read as digital art: no clean lines, no plastic surfaces, no smooth gradients, and no hyper-sharp AI detail. It must feel like an original, physical artifact found in a library archive.",
+          "overlay_content": "Daytime Temple Court Prayers",
+          "placement": "side explainer box",
+          "text_box_style": "mini side-definition box with connector arrows",
+          "references": []
+        }
+      ]
+    },
+    {
+      "section": "Introduction",
+      "paragraph_index": 2,
+      "prompt_count": 2,
+      "scenes": [
+        {
+          "alignment_id": "ALN-0002",
+          "paragraph_text": "Acts 2 paints this vivid picture: early Christians devoting themselves to the apostles' teaching, fellowship, breaking bread, and prayer. They hit the temple daily but shared those intimate meals in houses, blending Jewish public devotion with something deeply personal.[1] That phrase, \"breaking of bread\" in verses 42 and 46, calls up Jesus' own actions at the Last Supper\u2014taking, blessing, breaking, giving, just like in Luke 22:19.[1] What starts as a fresh pattern in Jerusalem's temple shadow grows through the centuries: patristic writings, monastic rules, modern updates. Each step builds on Scripture, bending to pressures like Roman crackdowns or church centralization. Primary sources light the way, showing the meal as the steady heartbeat\u2014shifting from homes near the temple to full-blown liturgical spaces.",
+          "scene_focus": "Early Jerusalem house fellowship",
+          "prompt": "In a modest 1st-century Jewish home in Jerusalem, a small group of diverse early Christians in simple tunics and cloaks gathers around a low wooden table laden with unleavened bread and cups, one figure breaking bread in a gesture of blessing while others listen attentively to an apostle- teacher gesturing from a scroll; through an open window, the shadowed silhouette of the Second Temple looms in the distant twilight, evoking public devotion blended with intimate prayer; warm candlelight casts deep shadows across weathered stone walls and clay lamps, creating a focal point on the shared meal with Rendered as a heavy, hand-worked charcoal drawing on rough-textured aged parchment, with thick graphite strokes, deep smudged carbon blacks, and fine cross-hatching. The style mirrors 19th-century tonalism: soft-focus atmospheric edges and a strong sense of physical depth. The image is predominantly monochrome-rich charcoal blacks, charcoal-dust greys, and warm ivory-parchment midtones-with a restrained, ghostly tint of color drawn ONLY from the TheoEngage signature palette: oxidized gold ochre for candlelight and focal warmth; aged lapis indigo for deep, misty shadows; and a muted Byzantine crimson for subtle gravity. Colors appear as thin, dried pigment washes over the charcoal. Lighting is dramatic chiaroscuro, featuring high tonal contrast, deep velvety shadows, and softly glowing highlights. Visible paper fiber, toothy grain, and organic imperfections throughout. The final image must NOT read as digital art: no clean lines, no plastic surfaces, no smooth gradients, and no hyper-sharp AI detail. It must feel like an original, physical artifact found in a library archive.",
+          "overlay_content": "Early Jerusalem House Fellowship",
+          "placement": "side explainer box",
+          "text_box_style": "mini side-definition box with connector arrows",
+          "references": [
+            "Joshua Michael Wallnofer, A Biblically Faithful Participation in The Lord\u2019s Supper Following the Model of Justin Martyr (Scholars Crossing, 2024)."
+          ]
+        },
+        {
+          "alignment_id": "ALN-0003",
+          "paragraph_text": "Acts 2 paints this vivid picture: early Christians devoting themselves to the apostles' teaching, fellowship, breaking bread, and prayer. They hit the temple daily but shared those intimate meals in houses, blending Jewish public devotion with something deeply personal.[1] That phrase, \"breaking of bread\" in verses 42 and 46, calls up Jesus' own actions at the Last Supper\u2014taking, blessing, breaking, giving, just like in Luke 22:19.[1] What starts as a fresh pattern in Jerusalem's temple shadow grows through the centuries: patristic writings, monastic rules, modern updates. Each step builds on Scripture, bending to pressures like Roman crackdowns or church centralization. Primary sources light the way, showing the meal as the steady heartbeat\u2014shifting from homes near the temple to full-blown liturgical spaces.",
+          "scene_focus": "Liturgical meal evolution",
+          "prompt": "In a shadowed 4th-century basilica interior transitioning from house church simplicity, robed figures in early patristic-era vestments gather around a stone altar for the breaking of bread, one central cleric elevating a loaf in ritual gesture amid flickering oil lamps and scattered ancient codices on stands; architectural elements arched niches and fresco remnants evoke the shift from temple-shadowed homes to formalized spaces, with a faint path of light from a high window illuminating primary source scrolls in the foreground, symbolizing enduring scriptural heartbeat through historical pressures; deep Rendered as a heavy, hand-worked charcoal drawing on rough-textured aged parchment, with thick graphite strokes, deep smudged carbon blacks, and fine cross-hatching. The style mirrors 19th-century tonalism: soft-focus atmospheric edges and a strong sense of physical depth. The image is predominantly monochrome-rich charcoal blacks, charcoal-dust greys, and warm ivory-parchment midtones-with a restrained, ghostly tint of color drawn ONLY from the TheoEngage signature palette: oxidized gold ochre for candlelight and focal warmth; aged lapis indigo for deep, misty shadows; and a muted Byzantine crimson for subtle gravity. Colors appear as thin, dried pigment washes over the charcoal. Lighting is dramatic chiaroscuro, featuring high tonal contrast, deep velvety shadows, and softly glowing highlights. Visible paper fiber, toothy grain, and organic imperfections throughout. The final image must NOT read as digital art: no clean lines, no plastic surfaces, no smooth gradients, and no hyper-sharp AI detail. It must feel like an original, physical artifact found in a library archive.",
+          "overlay_content": "Liturgical Meal Evolution",
+          "placement": "side explainer box",
+          "text_box_style": "mini side-definition box with connector arrows",
+          "references": [
+            "Joshua Michael Wallnofer, A Biblically Faithful Participation in The Lord\u2019s Supper Following the Model of Justin Martyr (Scholars Crossing, 2024)."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Introduction",
+      "paragraph_index": 3,
+      "prompt_count": 1,
+      "scenes": [
+        {
+          "alignment_id": "ALN-0004",
+          "paragraph_text": "Right after Pentecost, Acts 2 shows the Jerusalem church living this hybrid life: temple loyalty by day, bread-breaking in homes by night. Verses 42 and 46 spotlight the meal as a daily joyride alongside public prayers, knitting together those three thousand converts.[1] Luke ties it straight to Jesus' table moves in Luke 22:19 and Matthew 26:26, planting the rite in his footsteps.[1] Scholars note how Luke shapes Acts to track the gospel's spread\u2014from Jews in chapter 2 through chapter 10, to proselytes and Gentiles\u2014with bread-breaking marking loyalty in every phase.[2] The temple stood as the big public hub until 70 AD wrecked it, nudging focus elsewhere, but that home meal? It traveled light and stuck around. No fancy rules yet\u2014just apostles guiding it all, hinting at ordinations to come.",
+          "scene_focus": "Hybrid worship in Jerusalem",
+          "prompt": "A split composition divided by a subtle shadowed vertical line, left side showing a diverse group of early Jewish converts in period-accurate 1st-century temple courtyard attire\u2014simple tunics and cloaks\u2014engaged in public prayer amid weathered stone columns and arched porticos under soft daylight filtering through; right side depicting the same group gathered intimately around a low wooden table in a modest Jerusalem home interior lit by warm oil lamp flicker, sharing unleavened bread and cups in a meal of fellowship, with woven mats on earthen floors and hanging linens; central focal point bridging the split is Rendered as a heavy, hand-worked charcoal drawing on rough-textured aged parchment, with thick graphite strokes, deep smudged carbon blacks, and fine cross-hatching. The style mirrors 19th-century tonalism: soft-focus atmospheric edges and a strong sense of physical depth. The image is predominantly monochrome-rich charcoal blacks, charcoal-dust greys, and warm ivory-parchment midtones-with a restrained, ghostly tint of color drawn ONLY from the TheoEngage signature palette: oxidized gold ochre for candlelight and focal warmth; aged lapis indigo for deep, misty shadows; and a muted Byzantine crimson for subtle gravity. Colors appear as thin, dried pigment washes over the charcoal. Lighting is dramatic chiaroscuro, featuring high tonal contrast, deep velvety shadows, and softly glowing highlights. Visible paper fiber, toothy grain, and organic imperfections throughout. The final image must NOT read as digital art: no clean lines, no plastic surfaces, no smooth gradients, and no hyper-sharp AI detail. It must feel like an original, physical artifact found in a library archive.",
+          "overlay_content": "Hybrid Worship Jerusalem",
+          "placement": "side explainer box",
+          "text_box_style": "mini side-definition box with connector arrows",
+          "references": [
+            "Joshua Michael Wallnofer, A Biblically Faithful Participation in The Lord\u2019s Supper Following the Model of Justin Martyr (Scholars Crossing, 2024).",
+            "J. Elsley and James Slade, Annotations on the Four Gospels and the Acts of the Apostles: Compiled and .. (C. & J. Rivington, 1824)."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Introduction",
+      "paragraph_index": 4,
+      "prompt_count": 2,
+      "scenes": [
+        {
+          "alignment_id": "ALN-0005",
+          "paragraph_text": "Fast forward to the late first or early second century, and the Didache steps in, shaping that bread-breaking into eucharistic prayers over cup and loaf. It calls for thanks over David's holy vine and life's broken bits gathered up.[1][3] From Syrian or Egyptian circles, this text splits eucharist from casual agape meals, demanding pure hearts tied to baptism, turning Acts 2's home rite into real liturgy.[4] Ignatius of Antioch amps it up around 110 AD, writing to Smyrnaeans 8.1-2: bishops must lead one true eucharist\u2014no splinter agapes\u2014and breaking bread means church unity.[1] Both pull from Acts 2's teaching-fellowship-meal-prayer flow; Ignatius tackles meal messes like 1 Corinthians 11:20 later echoes.[1] Temple days? Gone after 70 AD. But the meal holds center stage, with texts like Didache bridging to bigger rituals.",
+          "scene_focus": "Early Christian eucharistic prayer gathering",
+          "prompt": "In a dimly lit, humble stone-walled room of a late first-century Syrian home, a small group of robed figures in simple tunics gathers around a low wooden table, one figure raising a clay cup in prayer while another breaks a loaf of bread, evoking the Didache's eucharistic rite with expressions of solemn thanks, scattered oil lamps casting warm flickering shadows on aged parchment scrolls nearby, the composition centered on the cup and loaf as focal points with layered figures in midground and background suggesting community purity tied to baptism, deep chiaroscuro highlighting the ritual separation from casual Rendered as a heavy, hand-worked charcoal drawing on rough-textured aged parchment, with thick graphite strokes, deep smudged carbon blacks, and fine cross-hatching. The style mirrors 19th-century tonalism: soft-focus atmospheric edges and a strong sense of physical depth. The image is predominantly monochrome-rich charcoal blacks, charcoal-dust greys, and warm ivory-parchment midtones-with a restrained, ghostly tint of color drawn ONLY from the TheoEngage signature palette: oxidized gold ochre for candlelight and focal warmth; aged lapis indigo for deep, misty shadows; and a muted Byzantine crimson for subtle gravity. Colors appear as thin, dried pigment washes over the charcoal. Lighting is dramatic chiaroscuro, featuring high tonal contrast, deep velvety shadows, and softly glowing highlights. Visible paper fiber, toothy grain, and organic imperfections throughout. The final image must NOT read as digital art: no clean lines, no plastic surfaces, no smooth gradients, and no hyper-sharp AI detail. It must feel like an original, physical artifact found in a library archive.",
+          "overlay_content": "Early Christian Eucharistic Prayer Gathering",
+          "placement": "side explainer box",
+          "text_box_style": "mini side-definition box with connector arrows",
+          "references": [
+            "Joshua Michael Wallnofer, A Biblically Faithful Participation in The Lord\u2019s Supper Following the Model of Justin Martyr (Scholars Crossing, 2024).",
+            "Clayton N. Jefford, Didache: The Teaching of the Twelve Apostles.",
+            "Eusebius, Ecclesiastical History, ed. Kirsopp Lake."
+          ]
+        },
+        {
+          "alignment_id": "ALN-0006",
+          "paragraph_text": "Fast forward to the late first or early second century, and the Didache steps in, shaping that bread-breaking into eucharistic prayers over cup and loaf. It calls for thanks over David's holy vine and life's broken bits gathered up.[1][3] From Syrian or Egyptian circles, this text splits eucharist from casual agape meals, demanding pure hearts tied to baptism, turning Acts 2's home rite into real liturgy.[4] Ignatius of Antioch amps it up around 110 AD, writing to Smyrnaeans 8.1-2: bishops must lead one true eucharist\u2014no splinter agapes\u2014and breaking bread means church unity.[1] Both pull from Acts 2's teaching-fellowship-meal-prayer flow; Ignatius tackles meal messes like 1 Corinthians 11:20 later echoes.[1] Temple days? Gone after 70 AD. But the meal holds center stage, with texts like Didache bridging to bigger rituals.",
+          "scene_focus": "Bishop leading unified eucharist",
+          "prompt": "Around 110 AD in an Antiochene house church with weathered stone arches and terracotta floors, a central bishop figure in a plain dalmatic extends hands over a shared loaf and cup on an altar- table, surrounded by a unified circle of diverse robed congregants in attentive postures, symbolizing Ignatius' call for one true eucharist under episcopal leadership and church unity, faint outlines of fellowship scrolls in the shadowed background, candlelight pooling softly on the bread-breaking focal point with deep misty recesses emphasizing separation from splintered meals, composition layering the bishop in Rendered as a heavy, hand-worked charcoal drawing on rough-textured aged parchment, with thick graphite strokes, deep smudged carbon blacks, and fine cross-hatching. The style mirrors 19th-century tonalism: soft-focus atmospheric edges and a strong sense of physical depth. The image is predominantly monochrome-rich charcoal blacks, charcoal-dust greys, and warm ivory-parchment midtones-with a restrained, ghostly tint of color drawn ONLY from the TheoEngage signature palette: oxidized gold ochre for candlelight and focal warmth; aged lapis indigo for deep, misty shadows; and a muted Byzantine crimson for subtle gravity. Colors appear as thin, dried pigment washes over the charcoal. Lighting is dramatic chiaroscuro, featuring high tonal contrast, deep velvety shadows, and softly glowing highlights. Visible paper fiber, toothy grain, and organic imperfections throughout. The final image must NOT read as digital art: no clean lines, no plastic surfaces, no smooth gradients, and no hyper-sharp AI detail. It must feel like an original, physical artifact found in a library archive.",
+          "overlay_content": "Bishop Leading Unified Eucharist",
+          "placement": "side explainer box",
+          "text_box_style": "mini side-definition box with connector arrows",
+          "references": [
+            "Joshua Michael Wallnofer, A Biblically Faithful Participation in The Lord\u2019s Supper Following the Model of Justin Martyr (Scholars Crossing, 2024).",
+            "Clayton N. Jefford, Didache: The Teaching of the Twelve Apostles.",
+            "Eusebius, Ecclesiastical History, ed. Kirsopp Lake."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Introduction",
+      "paragraph_index": 5,
+      "prompt_count": 1,
+      "scenes": [
+        {
+          "alignment_id": "ALN-0007",
+          "paragraph_text": "This is where it gets interesting\u2014enter Justin Martyr, philosopher-turned-believer, killed around 165 AD. In his First Apology, chapters 65-67, he gives the first full rundown of Sunday worship for outsiders. Sun's day: gather for apostle or prophet readings, a talk, prayers, then bread and wine offered with thanks by the leader, shared out, even sent to absentees\u2014straight link to Acts 2's breaking bread.[1][5] Facing Roman cannibalism smears, Justin roots it in Christ's prophecy punch, keeping apostolic ties tight.[1] His Dialogue with Trypho 8.1-2 shares his own turnaround story, casting worship as smart defiance under fire, like Acts 2's bold joy.[1] Around 150-155 AD in Rome, this evolves home vibes into orderly meets\u2014no altars, just spoken remembrance over sacrifice. Justin's blueprint shapes what's next, holding Acts 2:42's scripture-prayer-meal balance.",
+          "scene_focus": "Early Christian house church gathering",
+          "prompt": "In a dimly lit 2nd-century Roman home interior with rough stone walls and simple wooden furnishings, a small diverse group of believers in tunics and cloaks gathers around a low table under flickering candlelight; one figure reads aloud from a rolled parchment of apostolic writings in the foreground, while others listen attentively in the midground, with shared bread and cup elements on the table evoking communal remembrance; background shows shadowed doorways suggesting a private, orderly meeting space, conveying a sense of defiant joy and apostolic continuity in a shadowed, intimate atmosphere. Rendered Rendered as a heavy, hand-worked charcoal drawing on rough-textured aged parchment, with thick graphite strokes, deep smudged carbon blacks, and fine cross-hatching. The style mirrors 19th-century tonalism: soft-focus atmospheric edges and a strong sense of physical depth. The image is predominantly monochrome-rich charcoal blacks, charcoal-dust greys, and warm ivory-parchment midtones-with a restrained, ghostly tint of color drawn ONLY from the TheoEngage signature palette: oxidized gold ochre for candlelight and focal warmth; aged lapis indigo for deep, misty shadows; and a muted Byzantine crimson for subtle gravity. Colors appear as thin, dried pigment washes over the charcoal. Lighting is dramatic chiaroscuro, featuring high tonal contrast, deep velvety shadows, and softly glowing highlights. Visible paper fiber, toothy grain, and organic imperfections throughout. The final image must NOT read as digital art: no clean lines, no plastic surfaces, no smooth gradients, and no hyper-sharp AI detail. It must feel like an original, physical artifact found in a library archive.",
+          "overlay_content": "Early Christian House Church Gathering",
+          "placement": "side explainer box",
+          "text_box_style": "mini side-definition box with connector arrows",
+          "references": [
+            "Joshua Michael Wallnofer, A Biblically Faithful Participation in The Lord\u2019s Supper Following the Model of Justin Martyr (Scholars Crossing, 2024).",
+            "Saint Justin Martyr, The First Apology The Second Apology Dialogue with Trypho."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Introduction",
+      "paragraph_index": 6,
+      "prompt_count": 2,
+      "scenes": [
+        {
+          "alignment_id": "ALN-0008",
+          "paragraph_text": "By the third century, Hippolytus of Rome nails it down in the Apostolic Tradition, around 215 AD\u2014a church manual on ordinations, baptisms, eucharist.[6] Chapters 21-23 lay out post-baptism communion, fasting, a set prayer hitting creation, incarnation, end times over bread and cup, building on Justin's thanks but bishop-led.[6] Cheese, olives offered too (chapter 23), nodding to Acts 2's temple-rich feasts, now in house-churches.[6] Rules for widows, readers, subdeacons (11-13) organize the group for shared priestly bread-breaking.[6] Claiming apostolic roots, it links second-century sketches to later books, Greek bits and versions proving steady text. Roles and prayers turn Acts 2's freewheeling heart into disciplined rite, as bishops rise.",
+          "scene_focus": "House-church eucharist ritual",
+          "prompt": "In a dimly lit 3rd-century Roman house-church interior with shadowed stone walls and simple wooden furnishings, a central bishop figure in a plain tunic stands at a low table holding a chalice and loaf of bread, surrounded by a small gathered community of men and women in period tunics kneeling or seated on the floor, faint outlines of olives and cheese on the table, atmospheric depth from candlelight casting long shadows, evoking post-baptism communion and prayers on creation, incarnation, and end times. Rendered as a heavy, hand-worked Rendered as a heavy, hand-worked charcoal drawing on rough-textured aged parchment, with thick graphite strokes, deep smudged carbon blacks, and fine cross-hatching. The style mirrors 19th-century tonalism: soft-focus atmospheric edges and a strong sense of physical depth. The image is predominantly monochrome-rich charcoal blacks, charcoal-dust greys, and warm ivory-parchment midtones-with a restrained, ghostly tint of color drawn ONLY from the TheoEngage signature palette: oxidized gold ochre for candlelight and focal warmth; aged lapis indigo for deep, misty shadows; and a muted Byzantine crimson for subtle gravity. Colors appear as thin, dried pigment washes over the charcoal. Lighting is dramatic chiaroscuro, featuring high tonal contrast, deep velvety shadows, and softly glowing highlights. Visible paper fiber, toothy grain, and organic imperfections throughout. The final image must NOT read as digital art: no clean lines, no plastic surfaces, no smooth gradients, and no hyper-sharp AI detail. It must feel like an original, physical artifact found in a library archive.",
+          "overlay_content": "House-church Eucharist Ritual",
+          "placement": "side explainer box",
+          "text_box_style": "mini side-definition box with connector arrows",
+          "references": [
+            "Apostolic Tradition Hermeneia, Hermeneia A Critical Historical Commentary on t."
+          ]
+        },
+        {
+          "alignment_id": "ALN-0009",
+          "paragraph_text": "By the third century, Hippolytus of Rome nails it down in the Apostolic Tradition, around 215 AD\u2014a church manual on ordinations, baptisms, eucharist.[6] Chapters 21-23 lay out post-baptism communion, fasting, a set prayer hitting creation, incarnation, end times over bread and cup, building on Justin's thanks but bishop-led.[6] Cheese, olives offered too (chapter 23), nodding to Acts 2's temple-rich feasts, now in house-churches.[6] Rules for widows, readers, subdeacons (11-13) organize the group for shared priestly bread-breaking.[6] Claiming apostolic roots, it links second-century sketches to later books, Greek bits and versions proving steady text. Roles and prayers turn Acts 2's freewheeling heart into disciplined rite, as bishops rise.",
+          "scene_focus": "Early church organizational roles",
+          "prompt": "A shadowed assembly in a 3rd-century Roman atrium- space with weathered columns and tiled floor, a bishop in simple robes gesturing toward grouped figures including veiled widows seated together, a reader holding a scroll, and subdeacons arranging vessels, all in tunics appropriate to the era, central focus on shared bread-breaking elements a communal loaf, conveying disciplined structure from apostolic roots amid deep tonal contrasts from low interior light Rendered as a heavy, hand-worked charcoal drawing on rough-textured aged parchment, with thick graphite strokes, deep smudged carbon blacks, and fine cross-hatching. The style mirrors 19th-century tonalism: soft-focus atmospheric edges and a strong sense of physical depth. The image is predominantly monochrome-rich charcoal blacks, charcoal-dust greys, and warm ivory-parchment midtones-with a restrained, ghostly tint of color drawn ONLY from the TheoEngage signature palette: oxidized gold ochre for candlelight and focal warmth; aged lapis indigo for deep, misty shadows; and a muted Byzantine crimson for subtle gravity. Colors appear as thin, dried pigment washes over the charcoal. Lighting is dramatic chiaroscuro, featuring high tonal contrast, deep velvety shadows, and softly glowing highlights. Visible paper fiber, toothy grain, and organic imperfections throughout. The final image must NOT read as digital art: no clean lines, no plastic surfaces, no smooth gradients, and no hyper-sharp AI detail. It must feel like an original, physical artifact found in a library archive.",
+          "overlay_content": "Early Church Organizational Roles",
+          "placement": "side explainer box",
+          "text_box_style": "mini side-definition box with connector arrows",
+          "references": [
+            "Apostolic Tradition Hermeneia, Hermeneia A Critical Historical Commentary on t."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Introduction",
+      "paragraph_index": 7,
+      "prompt_count": 2,
+      "scenes": [
+        {
+          "alignment_id": "ALN-0010",
+          "paragraph_text": "Eusebius of Caesarea picks up the thread in his early fourth-century Ecclesiastical History, tracking worship through persecutions via apostle lines and meals in books I-V.[4] He hands down patristic links from Acts players to his day, proving bread-breaking's nonstop run sans temple.[7] Jump to twelfth-century crusader Jerusalem: Greek liturgy booms amid Latin rule. Hagios Stavros Gr. 43 from 1122 AD, a Holy Week-Easter hymnal for the Holy Sepulchre; Sinai Gr. 1096, Typikon for St. Sabas Lavra near Jerusalem.[7] They tweak Byzantine styles for Palestinian turf, fueling eucharist with local hymns\u2014echoing Acts 2's temple devotion, now at the Resurrection spot.[7] Eusebius frames it as natural bloom; monasteries tune daily prayers and meals, guarding eastern paths from the start.",
+          "scene_focus": "Fourth-century scholar writing ecclesiastical history",
+          "prompt": "In a shadowed fourth-century scriptorium in Caesarea, a robed scholar seated at a wooden desk laden with scrolls and an open codex, intently inscribing with a reed pen by the warm flicker of an oil lamp, surrounded by faint symbolic vignettes in the background of apostles sharing bread at a simple meal table and early Christians gathered in prayer amid subtle hints of persecution distant shadowed figures, the composition centered on the act of writing to evoke unbroken patristic links from Acts to contemporary worship without temple reliance, deep chiaroscuro lighting with candlelight highlighting the page Rendered as a heavy, hand-worked charcoal drawing on rough-textured aged parchment, with thick graphite strokes, deep smudged carbon blacks, and fine cross-hatching. The style mirrors 19th-century tonalism: soft-focus atmospheric edges and a strong sense of physical depth. The image is predominantly monochrome-rich charcoal blacks, charcoal-dust greys, and warm ivory-parchment midtones-with a restrained, ghostly tint of color drawn ONLY from the TheoEngage signature palette: oxidized gold ochre for candlelight and focal warmth; aged lapis indigo for deep, misty shadows; and a muted Byzantine crimson for subtle gravity. Colors appear as thin, dried pigment washes over the charcoal. Lighting is dramatic chiaroscuro, featuring high tonal contrast, deep velvety shadows, and softly glowing highlights. Visible paper fiber, toothy grain, and organic imperfections throughout. The final image must NOT read as digital art: no clean lines, no plastic surfaces, no smooth gradients, and no hyper-sharp AI detail. It must feel like an original, physical artifact found in a library archive.",
+          "overlay_content": "Fourth-century Scholar Writing Ecclesiastical History",
+          "placement": "side explainer box",
+          "text_box_style": "mini side-definition box with connector arrows",
+          "references": [
+            "Eusebius, Ecclesiastical History Books I-V, ed. Kirsopp Lake, z-librar.",
+            "Daniel Galadza, Greek Liturgy in Crusader Jerusalem: Witnesses of Liturgical Life at the Holy Sepulchre and St Sabas Lavra (Routledge, 2020)."
+          ]
+        },
+        {
+          "alignment_id": "ALN-0011",
+          "paragraph_text": "Eusebius of Caesarea picks up the thread in his early fourth-century Ecclesiastical History, tracking worship through persecutions via apostle lines and meals in books I-V.[4] He hands down patristic links from Acts players to his day, proving bread-breaking's nonstop run sans temple.[7] Jump to twelfth-century crusader Jerusalem: Greek liturgy booms amid Latin rule. Hagios Stavros Gr. 43 from 1122 AD, a Holy Week-Easter hymnal for the Holy Sepulchre; Sinai Gr. 1096, Typikon for St. Sabas Lavra near Jerusalem.[7] They tweak Byzantine styles for Palestinian turf, fueling eucharist with local hymns\u2014echoing Acts 2's temple devotion, now at the Resurrection spot.[7] Eusebius frames it as natural bloom; monasteries tune daily prayers and meals, guarding eastern paths from the start.",
+          "scene_focus": "Twelfth-century Jerusalem liturgical manuscripts",
+          "prompt": "Within the stone-vaulted interior of the twelfth-century Holy Sepulchre in crusader-era Jerusalem, a group of robed Greek Orthodox monks in period tunics gathered around an altar- table, one examining an open hymnal manuscript with illuminated pages showing subtle Easter motifs, another holding a typikon volume inscribed with local Palestinian adaptations, faint background elements of the Resurrection tomb and incense smoke evoking eucharistic meals and hymns echoing Acts 2 temple devotion now at this sacred site, the focal point on the manuscripts amid monastic tuning of Byzantine styles for eastern paths Rendered as a heavy, hand-worked charcoal drawing on rough-textured aged parchment, with thick graphite strokes, deep smudged carbon blacks, and fine cross-hatching. The style mirrors 19th-century tonalism: soft-focus atmospheric edges and a strong sense of physical depth. The image is predominantly monochrome-rich charcoal blacks, charcoal-dust greys, and warm ivory-parchment midtones-with a restrained, ghostly tint of color drawn ONLY from the TheoEngage signature palette: oxidized gold ochre for candlelight and focal warmth; aged lapis indigo for deep, misty shadows; and a muted Byzantine crimson for subtle gravity. Colors appear as thin, dried pigment washes over the charcoal. Lighting is dramatic chiaroscuro, featuring high tonal contrast, deep velvety shadows, and softly glowing highlights. Visible paper fiber, toothy grain, and organic imperfections throughout. The final image must NOT read as digital art: no clean lines, no plastic surfaces, no smooth gradients, and no hyper-sharp AI detail. It must feel like an original, physical artifact found in a library archive.",
+          "overlay_content": "Twelfth-century Jerusalem Liturgical Manuscripts",
+          "placement": "side explainer box",
+          "text_box_style": "mini side-definition box with connector arrows",
+          "references": [
+            "Eusebius, Ecclesiastical History Books I-V, ed. Kirsopp Lake, z-librar.",
+            "Daniel Galadza, Greek Liturgy in Crusader Jerusalem: Witnesses of Liturgical Life at the Holy Sepulchre and St Sabas Lavra (Routledge, 2020)."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Introduction",
+      "paragraph_index": 8,
+      "prompt_count": 2,
+      "scenes": [
+        {
+          "alignment_id": "ALN-0012",
+          "paragraph_text": "Twentieth-century Anglicans circle back to Acts 2's form, as Paul Bradshaw spots, ditching heavy Gregory Dix 1945 vibes for scholar-driven rites.[8] Dix's four-action shape\u2014offertory, prayer, fraction, communion\u2014melds Justin and Hippolytus, feeding Vatican II too, but Anglicans keep fresh words sans big processions.[8] Edward Gareth Lloyd's 1997 dive into Church of England eucharist tweaks shows a century balancing catholic roots and reform zip.[9] Codex Sinaiticus, fourth-century gem, peeks at early texts molding these, Acts included.[3] Fresh work like Joshua Wallnofer's 2024 Justin pull urges Lord's Supper true to Scripture.[1] All this honors Acts 2's timeline, fitting temple-free meals to worldwide crowds.",
+          "scene_focus": "Early Christian communal meal",
+          "prompt": "A simple gathering of diverse figures in first-century attire, seated around a low wooden table in a shadowed upper room, sharing bread and wine in a temple-free meal under soft candlelight, evoking Acts 2's fellowship with expressions of communal reflection and unity, foreground loaf and cup as focal point, background faint outlines of urban Jerusalem rooftops Rendered as a heavy, hand-worked charcoal drawing on rough-textured aged parchment, with thick graphite strokes, deep smudged carbon blacks, and fine cross-hatching. The style mirrors 19th-century tonalism: soft-focus atmospheric edges and a strong sense of physical depth. The image is predominantly monochrome-rich charcoal blacks, charcoal-dust greys, and warm ivory-parchment midtones-with a restrained, ghostly tint of color drawn ONLY from the TheoEngage signature palette: oxidized gold ochre for candlelight and focal warmth; aged lapis indigo for deep, misty shadows; and a muted Byzantine crimson for subtle gravity. Colors appear as thin, dried pigment washes over the charcoal. Lighting is dramatic chiaroscuro, featuring high tonal contrast, deep velvety shadows, and softly glowing highlights. Visible paper fiber, toothy grain, and organic imperfections throughout. The final image must NOT read as digital art: no clean lines, no plastic surfaces, no smooth gradients, and no hyper-sharp AI detail. It must feel like an original, physical artifact found in a library archive.",
+          "overlay_content": "Early Christian Communal Meal",
+          "placement": "side explainer box",
+          "text_box_style": "mini side-definition box with connector arrows",
+          "references": [
+            "Paul Bradshaw, Anglican Eucharistic Rites Today in the Light of Modern Scholarship (Cambridge University Press, 2023).",
+            "Edward Gareth Lloyd, The revision of the Eucharist in the Church of England A study of liturgical change in the twentieth century (Durham e-Theses, Durham University, 1997).",
+            "Clayton N. Jefford, Didache The Teaching of the Twelve Apostles, z-library.sk.",
+            "Joshua Michael Wallnofer, A Biblically Faithful Participation in The Lord\u2019s Supper Following the Model of Justin Martyr (Scholars Crossing, 2024)."
+          ]
+        },
+        {
+          "alignment_id": "ALN-0013",
+          "paragraph_text": "Twentieth-century Anglicans circle back to Acts 2's form, as Paul Bradshaw spots, ditching heavy Gregory Dix 1945 vibes for scholar-driven rites.[8] Dix's four-action shape\u2014offertory, prayer, fraction, communion\u2014melds Justin and Hippolytus, feeding Vatican II too, but Anglicans keep fresh words sans big processions.[8] Edward Gareth Lloyd's 1997 dive into Church of England eucharist tweaks shows a century balancing catholic roots and reform zip.[9] Codex Sinaiticus, fourth-century gem, peeks at early texts molding these, Acts included.[3] Fresh work like Joshua Wallnofer's 2024 Justin pull urges Lord's Supper true to Scripture.[1] All this honors Acts 2's timeline, fitting temple-free meals to worldwide crowds.",
+          "scene_focus": "Scholars examining ancient manuscript",
+          "prompt": "In a dimly lit archive room with wooden shelves, two robed scholars from the early twentieth century lean over an open ancient codex on a heavy oak table, one pointing to faded script with a quill, the other noting in a ledger, central focus on the weathered pages resembling Codex Sinaiticus with visible vellum texture and ink details, soft lamplight casting long shadows across monastic stone walls Rendered as a heavy, hand-worked charcoal drawing on rough-textured aged parchment, with thick graphite strokes, deep smudged carbon blacks, and fine cross-hatching. The style mirrors 19th-century tonalism: soft-focus atmospheric edges and a strong sense of physical depth. The image is predominantly monochrome-rich charcoal blacks, charcoal-dust greys, and warm ivory-parchment midtones-with a restrained, ghostly tint of color drawn ONLY from the TheoEngage signature palette: oxidized gold ochre for candlelight and focal warmth; aged lapis indigo for deep, misty shadows; and a muted Byzantine crimson for subtle gravity. Colors appear as thin, dried pigment washes over the charcoal. Lighting is dramatic chiaroscuro, featuring high tonal contrast, deep velvety shadows, and softly glowing highlights. Visible paper fiber, toothy grain, and organic imperfections throughout. The final image must NOT read as digital art: no clean lines, no plastic surfaces, no smooth gradients, and no hyper-sharp AI detail. It must feel like an original, physical artifact found in a library archive.",
+          "overlay_content": "Scholars Examining Ancient Manuscript",
+          "placement": "side explainer box",
+          "text_box_style": "mini side-definition box with connector arrows",
+          "references": [
+            "Paul Bradshaw, Anglican Eucharistic Rites Today in the Light of Modern Scholarship (Cambridge University Press, 2023).",
+            "Edward Gareth Lloyd, The revision of the Eucharist in the Church of England A study of liturgical change in the twentieth century (Durham e-Theses, Durham University, 1997).",
+            "Clayton N. Jefford, Didache The Teaching of the Twelve Apostles, z-library.sk.",
+            "Joshua Michael Wallnofer, A Biblically Faithful Participation in The Lord\u2019s Supper Following the Model of Justin Martyr (Scholars Crossing, 2024)."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Introduction",
+      "paragraph_index": 9,
+      "prompt_count": 1,
+      "scenes": [
+        {
+          "alignment_id": "ALN-0014",
+          "paragraph_text": "Picture that temple-home spark in Acts 2 igniting through Didache prayers, Justin's bold stands, Hippolytus' blueprints, Eusebius' records, Jerusalem's typika, right to Anglican streams\u2014a seamless weave of bread-breaking. Named chapters, dated scrolls chart the shift from raw fellowship to led sacrament, tough as nails through empires and splits. It's a timeline alive: unity in loaf, patristic proofs, renewal nudges\u2014all pulsing from Jerusalem's first light.",
+          "scene_focus": "Unrolling chronological scroll of Eucharistic development",
+          "prompt": "A long, weathered parchment scroll unrolls horizontally across the frame, revealing a sequence of shadowed vignettes connected by faint thread- paths symbolizing continuity, beginning on the left with a humble Jerusalem upper room where diverse early figures in simple tunics gather around a shared loaf under soft candlelight evoking Acts 2 fellowship; transitioning to a modest assembly in prayer with raised hands and a central bread table representing Didache rites; then a resolute figure in 2nd-century attire standing boldly amid a shadowed forum- space with scrolls, alluding to Justin's witness Rendered as a heavy, hand-worked charcoal drawing on rough-textured aged parchment, with thick graphite strokes, deep smudged carbon blacks, and fine cross-hatching. The style mirrors 19th-century tonalism: soft-focus atmospheric edges and a strong sense of physical depth. The image is predominantly monochrome-rich charcoal blacks, charcoal-dust greys, and warm ivory-parchment midtones-with a restrained, ghostly tint of color drawn ONLY from the TheoEngage signature palette: oxidized gold ochre for candlelight and focal warmth; aged lapis indigo for deep, misty shadows; and a muted Byzantine crimson for subtle gravity. Colors appear as thin, dried pigment washes over the charcoal. Lighting is dramatic chiaroscuro, featuring high tonal contrast, deep velvety shadows, and softly glowing highlights. Visible paper fiber, toothy grain, and organic imperfections throughout. The final image must NOT read as digital art: no clean lines, no plastic surfaces, no smooth gradients, and no hyper-sharp AI detail. It must feel like an original, physical artifact found in a library archive.",
+          "overlay_content": "Unrolling Chronological Scroll Eucharistic Development",
+          "placement": "side explainer box",
+          "text_box_style": "mini side-definition box with connector arrows",
+          "references": []
+        }
+      ]
+    }
+  ]
+}

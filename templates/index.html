@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theology Academy Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="upload-page">
+  <div class="page-shell">
+    <div class="app-toolbar">
+      <div class="app-user">Signed in as <strong>{{ current_user.username }}</strong></div>
+      <div class="app-toolbar-actions">
+        {% if current_user.is_admin %}
+          <a class="secondary-btn" href="/admin">Admin dashboard</a>
+        {% endif %}
+        <a class="secondary-btn" href="/logout">Logout</a>
+      </div>
+    </div>
+    <header class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Theology Academy Studio</span>
+        <h1>Storyboard Studio ✨</h1>
+        <p>Upload source scripts and generate structured storyboard exports for production, review, and Canva handoff.</p>
+        <div class="hero-tags">
+          <span>🎬 Sentence-level scenes</span>
+          <span>📊 Preview + CSV outputs</span>
+          <span>⚡ FastAPI pipeline</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="grid-two">
+      <form id="upload_form" class="panel upload-panel" action="/process" method="post" enctype="multipart/form-data">
+        <div class="panel-head">
+          <h2>Create storyboard 🎨</h2>
+          <p>Drag in a source script and generate export files instantly.</p>
+        </div>
+
+        <div class="workflow-steps" id="workflow_steps">
+          <button type="button" class="step-pill active" data-step-target="1">1. 📁 Pick files</button>
+          <button type="button" class="step-pill" data-step-target="2">2. 🎛 Configure</button>
+          <button type="button" class="step-pill" data-step-target="3">3. ✅ Review output</button>
+        </div>
+
+        <div class="wizard-section" data-step="1">
+          <label class="dropzone" for="source_file" data-role="dropzone-source">
+            <input id="source_file" name="source_file" type="file" accept=".pdf,.docx,.md,.txt" required>
+            <div class="dropzone-inner">
+              <strong data-role="title">Drop YouTube script here 📄</strong>
+              <span data-role="subtitle">Supported: PDF, DOCX, MD, TXT</span>
+            </div>
+          </label>
+
+          <label class="dropzone" for="academic_file" data-role="dropzone-academic">
+            <input id="academic_file" name="academic_file" type="file" accept=".pdf,.docx,.md,.txt">
+            <div class="dropzone-inner">
+              <strong data-role="title">Optional: drop academic script for sync 📚</strong>
+              <span data-role="subtitle">Used to generate alignment IDs and parallel sentence references</span>
+            </div>
+          </label>
+
+          <div class="upload-status" id="upload_status" aria-live="polite">
+            <div class="status-row">
+              <span>Primary file</span>
+              <strong id="status_source">Not selected</strong>
+            </div>
+            <div class="status-row">
+              <span>Academic sync file</span>
+              <strong id="status_academic">Not selected</strong>
+            </div>
+          </div>
+
+          <div class="wizard-actions">
+            <button type="button" class="secondary-btn step-next" data-next-step="2">Next: Configure ➜</button>
+          </div>
+        </div>
+
+        <div class="wizard-section is-hidden" data-step="2">
+          <div class="field-grid">
+            <label>
+              <span>Title override</span>
+              <input type="text" name="title_override" placeholder="Optional custom title">
+            </label>
+            <label>
+              <span>Provider</span>
+              <input type="text" value="xAI Grok (fixed)" readonly>
+            </label>
+          </div>
+
+          <label>
+            <span>Style prompt</span>
+            <textarea name="style_prompt" rows="5">A detailed black-and-white charcoal rendering with subtle gradient transitions, executed in a classical artistic style with a muted palette and dramatic chiaroscuro lighting, medium shot.</textarea>
+          </label>
+
+          <div class="wizard-actions">
+            <button type="button" class="secondary-btn step-prev" data-prev-step="1">⬅ Back</button>
+            <button type="button" class="secondary-btn step-next" data-next-step="3">Next: Review ➜</button>
+          </div>
+        </div>
+
+        <div class="wizard-section is-hidden" data-step="3">
+          <div class="upload-status review-status">
+            <div class="status-row">
+              <span>Primary file</span>
+              <strong id="review_source">Not selected</strong>
+            </div>
+            <div class="status-row">
+              <span>Academic sync file</span>
+              <strong id="review_academic">Not selected</strong>
+            </div>
+            <div class="status-row">
+              <span>Provider</span>
+              <strong id="review_provider">xAI Grok (fixed)</strong>
+            </div>
+          </div>
+
+          <div class="wizard-actions">
+            <button type="button" class="secondary-btn step-prev" data-prev-step="2">⬅ Back</button>
+            <button id="generate_btn" class="primary-btn" type="submit">Generate storyboard package 🚀</button>
+          </div>
+        </div>
+      </form>
+
+      <aside class="panel side-panel">
+        <div class="panel-head">
+          <h2>Recent jobs 🗂</h2>
+          <p>Open previous runs or download their project package.</p>
+        </div>
+        <div class="job-list">
+          {% if jobs %}
+            {% for job in jobs %}
+              <a class="job-item" href="{{ job.path }}">
+                <span class="job-dot"></span>
+                <span>{{ job.title }}</span>
+              </a>
+            {% endfor %}
+          {% else %}
+            <div class="empty-state">No jobs yet. Upload your first script.</div>
+          {% endif %}
+        </div>
+      </aside>
+    </section>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
