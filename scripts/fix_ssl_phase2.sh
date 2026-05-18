@@ -1,9 +1,16 @@
 #!/bin/bash
 set -e
 
-APP_DIR="/var/www/Phase2_client_updated_workflow_updated_18_March"
 CONF="/etc/nginx/sites-available/phase2-undz"
 ENABLED="/etc/nginx/sites-enabled/000-phase2-undz.conf"
+CERT="/etc/letsencrypt/live/phase2.undz.shop/fullchain.pem"
+
+if [ ! -f "$CERT" ]; then
+  echo "=== Obtaining SSL cert for phase2.undz.shop ==="
+  certbot certonly --nginx -d phase2.undz.shop --non-interactive --agree-tos \
+    --register-unsafely-without-email || certbot certonly --webroot -w /var/www/html -d phase2.undz.shop --non-interactive --agree-tos \
+    --register-unsafely-without-email
+fi
 
 # Ensure phase2 app is running
 systemctl restart phase2
