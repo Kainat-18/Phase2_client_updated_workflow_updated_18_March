@@ -99,6 +99,7 @@ def login_page(request: Request, next: str = "/"):
     if user:
         return RedirectResponse(url="/", status_code=303)
     return templates.TemplateResponse(
+        request,
         "login.html",
         _base_template_context(
             request,
@@ -120,6 +121,7 @@ def login_submit(
     user = authenticate_user(settings.auth_db_path, username=username, password=password)
     if not user:
         return templates.TemplateResponse(
+            request,
             "login.html",
             _base_template_context(
                 request,
@@ -153,6 +155,7 @@ def admin_dashboard(request: Request):
 
     users = list_users(settings.auth_db_path)
     return templates.TemplateResponse(
+        request,
         "admin_dashboard.html",
         _base_template_context(
             request,
@@ -187,6 +190,7 @@ def admin_create_user(
     )
     users = list_users(settings.auth_db_path)
     return templates.TemplateResponse(
+        request,
         "admin_dashboard.html",
         _base_template_context(
             request,
@@ -216,6 +220,7 @@ def admin_delete_user(request: Request, target_user_id: int):
     )
     users = list_users(settings.auth_db_path)
     return templates.TemplateResponse(
+        request,
         "admin_dashboard.html",
         _base_template_context(
             request,
@@ -248,7 +253,7 @@ def home(request: Request):
                         "path": f"/jobs/{item.name}",
                     }
                 )
-    return templates.TemplateResponse("index.html", _base_template_context(request, {"jobs": jobs}))
+    return templates.TemplateResponse(request, "index.html", _base_template_context(request, {"jobs": jobs}))
 
 
 @app.post("/process")
@@ -345,6 +350,7 @@ def job_detail(request: Request, job_id: str):
             manifest_scenes = []
 
     return templates.TemplateResponse(
+        request,
         "result.html",
         _base_template_context(
             request,
