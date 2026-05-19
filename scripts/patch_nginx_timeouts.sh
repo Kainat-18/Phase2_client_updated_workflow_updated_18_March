@@ -38,7 +38,10 @@ for pattern in (
     "/etc/nginx/sites-enabled/default.conf",
 ):
     for match in glob.glob(pattern):
-        paths.add(Path(match))
+        p = Path(match)
+        if ".bak" in p.name:
+            continue
+        paths.add(p)
 
 for path in sorted(paths):
     if not path.is_file():

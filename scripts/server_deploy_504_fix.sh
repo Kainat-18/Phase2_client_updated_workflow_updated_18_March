@@ -2,8 +2,7 @@
 set -e
 cd /var/www/Phase2_client_updated_workflow_updated_18_March
 git pull
-bash scripts/patch_nginx_timeouts.sh
-systemctl restart phase2
+bash scripts/repair_nginx_phase2.sh
 sleep 2
 echo "=== phase2 service ==="
 systemctl is-active phase2
