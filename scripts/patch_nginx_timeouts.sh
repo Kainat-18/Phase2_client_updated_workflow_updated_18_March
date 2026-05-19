@@ -28,15 +28,17 @@ def patch_text(text: str) -> str:
     insert = "\n".join(TIMEOUT_LINES) + "\n"
     return text.replace(marker, marker + "\n" + insert, 1)
 
-paths = set()
+import glob
+
+paths: set[Path] = set()
 for pattern in (
     "/etc/nginx/sites-available/*",
     "/etc/nginx/sites-enabled/*",
     "/etc/nginx/conf.d/*.conf",
+    "/etc/nginx/sites-enabled/default.conf",
 ):
-    paths.update(Path("/").glob(pattern.lstrip("/")))
-
-paths.add(Path("/etc/nginx/sites-enabled/default.conf"))
+    for match in glob.glob(pattern):
+        paths.add(Path(match))
 
 for path in sorted(paths):
     if not path.is_file():
