@@ -23,6 +23,7 @@ from app.auth import (
     list_users,
 )
 from app.config import settings
+from app.job_runner import JobRunner
 from app.llm import LLMPlanner
 from app.pipeline import StoryboardPipeline
 from app.utils import ensure_dir, safe_slug, zip_folder
@@ -40,6 +41,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 pipeline = StoryboardPipeline()
+job_runner = JobRunner(str(Path(settings.output_dir) / "_job_status"))
 ensure_dir(settings.upload_dir)
 ensure_dir(settings.output_dir)
 init_auth_db(settings.auth_db_path)
@@ -290,18 +292,58 @@ async def process_upload(
         with academic_upload_path.open("wb") as f:
             shutil.copyfileobj(academic_file.file, f)
 
-    try:
+    job_id = job_runner.create_job_id(title_override.strip() or base_name)
+    resolved_style = style_prompt.strip() or settings.default_style_prompt
+    resolved_title = title_override.strip() or None
+    resolved_upload = str(upload_path)
+    resolved_academic = str(academic_upload_path) if academic_upload_path else None
+
+    def run_pipeline() -> str:
         out_dir = pipeline.run(
-            str(upload_path),
-            academic_input_path=str(academic_upload_path) if academic_upload_path else None,
+            resolved_upload,
+            academic_input_path=resolved_academic,
             provider='xai',
-            style_prompt=style_prompt.strip() or settings.default_style_prompt,
-            title_override=title_override.strip() or None,
+            style_prompt=resolved_style,
+            title_override=resolved_title,
         )
-    except RuntimeError as exc:
-        raise HTTPException(status_code=400, detail=str(exc))
-    job_id = Path(out_dir).name
-    return RedirectResponse(url=f"/jobs/{job_id}", status_code=303)
+        return Path(out_dir).name
+
+    job_runner.start(job_id, run_pipeline)
+    return RedirectResponse(url=f"/jobs/{job_id}/processing", status_code=303)
+
+
+@app.get("/jobs/{job_id}/processing", response_class=HTMLResponse)
+def job_processing(request: Request, job_id: str):
+    user = _current_user(request)
+    if not user:
+        return _login_redirect(request)
+    status = job_runner.read(job_id)
+    if not status:
+        raise HTTPException(status_code=404, detail="Job not found")
+    return templates.TemplateResponse(
+        request,
+        "processing.html",
+        _base_template_context(
+            request,
+            {
+                "job_id": job_id,
+                "status": status.get("status", "queued"),
+                "message": status.get("message", ""),
+                "error": status.get("error", ""),
+            },
+        ),
+    )
+
+
+@app.get("/api/jobs/{job_id}/status")
+def job_status_api(request: Request, job_id: str):
+    user = _current_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Not authenticated")
+    status = job_runner.read(job_id)
+    if not status:
+        raise HTTPException(status_code=404, detail="Job not found")
+    return JSONResponse(status)
 
 
 @app.get("/jobs/{job_id}", response_class=HTMLResponse)

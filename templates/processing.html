@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Processing | Theology Academy Studio</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="upload-page">
+  <div class="page-shell">
+    <section class="panel upload-panel" style="max-width: 640px; margin: 4rem auto;">
+      <div class="panel-head">
+        <span class="eyebrow">Theology Academy Studio</span>
+        <h1>Generating storyboard… ⏳</h1>
+        <p id="status_message">{{ message or "Starting pipeline..." }}</p>
+      </div>
+      <div class="upload-status" id="job_status_box">
+        <div class="status-row">
+          <span>Status</span>
+          <strong id="status_label">{{ status }}</strong>
+        </div>
+      </div>
+      <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.85;">
+        Large scripts can take 10–30 minutes. Keep this tab open — you will be redirected when finished.
+      </p>
+      <p id="error_box" style="color: #b42318; display: none; margin-top: 1rem;"></p>
+      <div class="wizard-actions" style="margin-top: 1.5rem;">
+        <a class="secondary-btn" href="/">← Back to upload</a>
+      </div>
+    </section>
+  </div>
+  <script>
+    const jobId = {{ job_id | tojson }};
+    const statusLabel = document.getElementById('status_label');
+    const statusMessage = document.getElementById('status_message');
+    const errorBox = document.getElementById('error_box');
+
+    async function poll() {
+      try {
+        const res = await fetch(`/api/jobs/${encodeURIComponent(jobId)}/status`);
+        if (!res.ok) throw new Error('Status check failed');
+        const data = await res.json();
+        statusLabel.textContent = data.status || 'unknown';
+        if (data.message) statusMessage.textContent = data.message;
+        if (data.status === 'done' && data.result_job_id) {
+          window.location.href = `/jobs/${encodeURIComponent(data.result_job_id)}`;
+          return;
+        }
+        if (data.status === 'failed') {
+          errorBox.style.display = 'block';
+          errorBox.textContent = data.error || 'Processing failed.';
+          return;
+        }
+      } catch (err) {
+        statusMessage.textContent = 'Still working… (checking again)';
+      }
+      setTimeout(poll, 4000);
+    }
+    poll();
+  </script>
+</body>
+</html>
