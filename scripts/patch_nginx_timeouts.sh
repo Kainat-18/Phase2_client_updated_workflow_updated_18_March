@@ -2,32 +2,56 @@
 # Fix 504 Gateway Timeout — patch every nginx vhost that proxies to phase2 (port 8001)
 set -e
 
-TIMEOUT_BLOCK='        proxy_connect_timeout 600s;
-        proxy_send_timeout 1800s;
-        proxy_read_timeout 1800s;
-        send_timeout 1800s;'
+python3 << 'PY'
+from pathlib import Path
+import re
 
-patch_file() {
-  local f="$1"
-  [ -f "$f" ] || return 0
-  if grep -q 'proxy_pass.*8001' "$f" 2>/dev/null || grep -q 'phase2.undz.shop' "$f" 2>/dev/null; then
-    if grep -q proxy_read_timeout "$f"; then
-      sed -i 's/proxy_connect_timeout [0-9]*s;/proxy_connect_timeout 600s;/g' "$f"
-      sed -i 's/proxy_send_timeout [0-9]*s;/proxy_send_timeout 1800s;/g' "$f"
-      sed -i 's/proxy_read_timeout [0-9]*s;/proxy_read_timeout 1800s;/g' "$f"
-    elif grep -q 'proxy_set_header X-Forwarded-Proto' "$f"; then
-      sed -i "/proxy_set_header X-Forwarded-Proto/a\\${TIMEOUT_BLOCK}" "$f"
-    fi
-    echo "Patched: $f"
-  fi
-}
+TIMEOUT_LINES = [
+    "        proxy_connect_timeout 600s;",
+    "        proxy_send_timeout 1800s;",
+    "        proxy_read_timeout 1800s;",
+    "        send_timeout 1800s;",
+]
 
-for f in /etc/nginx/sites-available/* /etc/nginx/sites-enabled/* /etc/nginx/conf.d/*.conf; do
-  patch_file "$f"
-done
+def should_patch(text: str) -> bool:
+    return "proxy_pass" in text and "8001" in text or "phase2.undz.shop" in text
 
-# Hostinger sometimes uses default.conf only
-patch_file /etc/nginx/sites-enabled/default.conf
+def patch_text(text: str) -> str:
+    if "proxy_read_timeout" in text:
+        text = re.sub(r"proxy_connect_timeout\s+\d+s;", "proxy_connect_timeout 600s;", text)
+        text = re.sub(r"proxy_send_timeout\s+\d+s;", "proxy_send_timeout 1800s;", text)
+        text = re.sub(r"proxy_read_timeout\s+\d+s;", "proxy_read_timeout 1800s;", text)
+        return text
+    marker = "proxy_set_header X-Forwarded-Proto"
+    if marker not in text:
+        return text
+    insert = "\n".join(TIMEOUT_LINES) + "\n"
+    return text.replace(marker, marker + "\n" + insert, 1)
+
+paths = set()
+for pattern in (
+    "/etc/nginx/sites-available/*",
+    "/etc/nginx/sites-enabled/*",
+    "/etc/nginx/conf.d/*.conf",
+):
+    paths.update(Path("/").glob(pattern.lstrip("/")))
+
+paths.add(Path("/etc/nginx/sites-enabled/default.conf"))
+
+for path in sorted(paths):
+    if not path.is_file():
+        continue
+    try:
+        original = path.read_text(encoding="utf-8", errors="ignore")
+    except OSError:
+        continue
+    if not should_patch(original):
+        continue
+    updated = patch_text(original)
+    if updated != original:
+        path.write_text(updated, encoding="utf-8")
+        print(f"Patched: {path}")
+PY
 
 nginx -t
 systemctl reload nginx
