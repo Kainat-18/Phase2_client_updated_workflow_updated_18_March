@@ -52,6 +52,35 @@ NGINX
 ln -sf "$CONF" "$ENABLED"
 rm -f /etc/nginx/sites-enabled/phase2 2>/dev/null || true
 
+# Fix broken proxy_set_header lines left by old patch script
+python3 << 'PY'
+import re
+from pathlib import Path
+
+broken = re.compile(
+    r"(\s*)proxy_set_header X-Forwarded-Proto\s*\n"
+    r"(?:\s*proxy_(?:connect|send|read)_timeout[^\n]*\n|\s*send_timeout[^\n]*\n)*"
+    r"\s*\$scheme;\s*\n",
+    re.MULTILINE,
+)
+
+for path in Path("/etc/nginx").rglob("*"):
+    if not path.is_file() or ".bak" in path.name:
+        continue
+    if path.suffix not in {"", ".conf"} and "nginx" not in str(path):
+        continue
+    try:
+        text = path.read_text(encoding="utf-8", errors="ignore")
+    except OSError:
+        continue
+    if "proxy_set_header X-Forwarded-Proto" not in text:
+        continue
+    fixed = broken.sub(r"\1proxy_set_header X-Forwarded-Proto $scheme;\n", text)
+    if fixed != text:
+        path.write_text(fixed, encoding="utf-8")
+        print(f"Fixed header in: {path}")
+PY
+
 nginx -t
 systemctl reload nginx
 systemctl restart phase2

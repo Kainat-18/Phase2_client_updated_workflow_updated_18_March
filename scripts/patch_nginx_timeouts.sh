@@ -14,7 +14,7 @@ TIMEOUT_LINES = [
 ]
 
 def should_patch(text: str) -> bool:
-    return "proxy_pass" in text and "8001" in text or "phase2.undz.shop" in text
+    return "proxy_pass" in text and "8001" in text
 
 def patch_text(text: str) -> str:
     if "proxy_read_timeout" in text:
